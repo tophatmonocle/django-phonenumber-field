@@ -57,10 +57,7 @@ class PhoneNumberField(models.Field):
         if value == '':
             return ''
         if value == None:
-            if hasattr(self, default):
-                return default
-            else:
-                return None
+            return ''
         value = to_python(value)
         if isinstance(value, basestring):
             # it is an invalid phone number
